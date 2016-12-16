@@ -36,7 +36,7 @@ import calebpaul.raindelay.R;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    private DatabaseReference mSearchedLocationReference;
+    private DatabaseReference mUserLocationReference;
     private LocationManager locationManager;
     private LocationListener listener;
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mSearchedLocationReference = FirebaseDatabase
+        mUserLocationReference = FirebaseDatabase
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
