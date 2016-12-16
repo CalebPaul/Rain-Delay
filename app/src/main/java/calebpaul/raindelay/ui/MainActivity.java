@@ -25,7 +25,7 @@ import calebpaul.raindelay.R;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    private DatabaseReference mSearchedLocationReference;
+    private DatabaseReference mUserLocationReference;
 
     Animation animFadeIn, animSlideIn;
 
@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mSearchedLocationReference = FirebaseDatabase
+        mUserLocationReference = FirebaseDatabase
                 .getInstance()
                 .getReference()
-                .child(Constants.FIREBASE_CHILD_SEARCHED_LATLONG);
+                .child(Constants.FIREBASE_CHILD_USER_LATLONG);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
